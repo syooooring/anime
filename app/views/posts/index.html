@@ -9,6 +9,12 @@
                 border-radius: 50%;
                 background-color: green;
             }
+            .square{
+              height: 150px;
+              width: 150px;
+              background-color: red;
+              margin: 10px;
+            }
         </style>
     </head>
     <body>
@@ -19,21 +25,24 @@
         
         <div id="circle"></div>
 
+        <div class="square"></div>
+
+        <div class="square"></div>
+
         <script "type/javascript">
 
-          $("div").click(function(){
-            $("p").html("クリックされました")
-            //alert($("p").html());
-          })
-        /*
-          $("#circle").click(function(){
-            alert("円がクリックされました");
-          })
+        $(".square").click(function(){
 
-          $(".square").click(function(){
-            alert("四角がクリックされました");
-          })
-           */
+          $(this).css("display","none");
+
+          //alert($("#circle").css("width"));
+
+          //$("#circle").css("width","300px");
+          //$("#circle").css("height","300px");
+          //$("#circle").css("background-color","red");
+          //alert("円がクリックされました")
+        })
+
         </script>
     </body>
 </html>
