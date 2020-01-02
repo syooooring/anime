@@ -3,17 +3,8 @@
 <html>
     <head>
         <style>
-            #circle{
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                background-color: green;
-            }
-            .square{
-              height: 150px;
-              width: 150px;
-              background-color: red;
-              margin: 10px;
+            #fadeIntext{
+              display: none;
             }
         </style>
     </head>
@@ -22,25 +13,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         -->
         <script src="jquery-3.4.1.min.js"></script>
-        
-        <div id="circle"></div>
 
-        <div class="square"></div>
+        <p id="fadeOuttext">このテキストはフェードアウトします</p>
+        <button id ="fadeOut">フェードアウトする</button>
 
-        <div class="square"></div>
+        <p　id="fadeIntext">最初は隠れています</p>
+        <button id ="fadeIn">フェードインする</button>
 
-        <script "type/javascript">
+        <script type="text/javascript">
 
-        $("div").click(function(){
-
-          $(this).fadeOut();
-
-          //alert($("#circle").css("width"));
-
-          //$("#circle").css("width","300px");
-          //$("#circle").css("height","300px");
-          //$("#circle").css("background-color","red");
-          //alert("円がクリックされました")
+        $("#fadeOut").click(function(){
+          $("#fadeOuttext").fadeOut("slow");
+        })
+        $("#fadeIn").click(function(){
+          $("#fadeIntext").fadeIn("slow");
         })
 
         </script>
