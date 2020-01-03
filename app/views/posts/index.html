@@ -21,7 +21,13 @@
 
         <script type="text/javascript">
         $("#circle").click(function(){
-          $("#circle").animate({width: "400px",height:"400px",marginLeft:"100px"},2000);
+            $("#circle").animate({
+              width: "400px",
+              height:"400px",
+              marginLeft:"100px"
+            },2000,function(){
+              $("#circle").css("background-color", "red");
+            });
         })
         </script>
     </body>
