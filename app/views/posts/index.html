@@ -3,8 +3,11 @@
 <html>
     <head>
         <style>
-            #fadeIntext{
-              display: none;
+            #circle{
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+              background-color: green;
             }
         </style>
     </head>
@@ -14,16 +17,11 @@
         -->
         <script src="jquery-3.4.1.min.js"></script>
 
-        <p id="text">このテキストは反転します</p>
-        <button id ="toggle">トグルする</button>
+        <div id="circle"></div>
 
         <script type="text/javascript">
-        $("#toggle").click(function(){
-          if($("#text").css("display") == "none"){
-          $("#text").fadeIn("slow");
-          } else {
-            $("#text").fadeOut("slow");
-          }
+        $("#circle").click(function(){
+          $("#circle").animate({width: "400px"},2000);
         })
         </script>
     </body>
