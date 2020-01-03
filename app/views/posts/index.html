@@ -14,21 +14,17 @@
         -->
         <script src="jquery-3.4.1.min.js"></script>
 
-        <p id="fadeOuttext">このテキストはフェードアウトします</p>
-        <button id ="fadeOut">フェードアウトする</button>
-
-        <p　id="fadeIntext">最初は隠れています</p>
-        <button id ="fadeIn">フェードインする</button>
+        <p id="text">このテキストは反転します</p>
+        <button id ="toggle">トグルする</button>
 
         <script type="text/javascript">
-
-        $("#fadeOut").click(function(){
-          $("#fadeOuttext").fadeOut("slow");
+        $("#toggle").click(function(){
+          if($("#text").css("display") == "none"){
+          $("#text").fadeIn("slow");
+          } else {
+            $("#text").fadeOut("slow");
+          }
         })
-        $("#fadeIn").click(function(){
-          $("#fadeIntext").fadeIn("slow");
-        })
-
         </script>
     </body>
 </html>
