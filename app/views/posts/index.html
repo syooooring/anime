@@ -4,20 +4,38 @@
     <head>
       <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
         <style>
-           
+           #draggable{
+             width: 200px;
+             height: 100px;
+             background-color: aqua;
+           }
+           #container{
+             width: 800px;
+             height: 500px;
+             background-color: aquamarine;
+           }
+           #draggable2{
+             width: 200px;
+             height: 100px;
+             background-color: coral;
+           }
         </style>
     </head>
     <body>
+        <div id="draggable">ドラッグしてください</div>
+
+        <div id="container">
+            <div id="draggable2">このDIVは指定された範囲内で動かせます</div>
+        </div>
         <script src="jquery-3.4.1.min.js"></script>
         <script src="jquery-ui/jquery-ui.js"></script>
 
         
 
         <script type="text/javascript">
-          var regex = /Great/i;
-          var string = "Regex is greate";
-          var result = string.match(regex);
-          alert(result);
+          $("#draggable").draggable({axis: "x"});
+          $("#draggable2").draggable({containment:"parent"});
+          
         </script>
     </body>
 </html>
