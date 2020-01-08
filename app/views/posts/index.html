@@ -9,16 +9,26 @@
              height: 100px;
              background-color: aqua;
            }
+           #also{
+             width: 200px;
+             height: 100px;
+             background-color: red;
+           }
         </style>
     </head>
     <body>
        <div id="resize1">リサイズしてください</div>
 
+       <div id="also">一緒に動きます</div>
+
         <script src="jquery-3.4.1.min.js"></script>
         <script src="jquery-ui/jquery-ui.js"></script>
 
         <script type="text/javascript">
-          $("#resize1").resizable();
+          $("#resize1").resizable({
+            alsoRsize: "#also"
+          });
+          $("#also").resizable();
         </script>
     </body>
 </html>
