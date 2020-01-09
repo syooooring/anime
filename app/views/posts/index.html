@@ -4,31 +4,32 @@
     <head>
       <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
         <style>
-           #resize1{
-             width: 200px;
+           #drug{
+             width: 100px;
              height: 100px;
              background-color: aqua;
+             margin: 20px;
            }
-           #also{
-             width: 200px;
-             height: 100px;
+           #drop{
+             width: 400px;
+             height: 200px;
              background-color: red;
            }
         </style>
     </head>
     <body>
-       <div id="resize1">リサイズしてください</div>
-
-       <div id="also">一緒に動きます</div>
-
+      <ul id="sortable">
+        <li>toyota</li>
+        <li>honda</li>
+        <li>mazda</li>
+        <li>suzuki</li>
+        <li>subaru</li>
+      </ul>
         <script src="jquery-3.4.1.min.js"></script>
         <script src="jquery-ui/jquery-ui.js"></script>
 
         <script type="text/javascript">
-          $("#resize1").resizable({
-            alsoRsize: "#also"
-          });
-          $("#also").resizable();
+          $("#sortable").sortable();
         </script>
     </body>
 </html>
