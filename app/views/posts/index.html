@@ -20,14 +20,23 @@
     <body>
        <div id="drug">ドラッグしてください</div>
 
-       <div id="drop">ここにドロップしてください</div>
+       <div id="drop">
+         <p>ここにドロップしてください</p>
+       </div>
 
         <script src="jquery-3.4.1.min.js"></script>
         <script src="jquery-ui/jquery-ui.js"></script>
 
         <script type="text/javascript">
          $("#drug").draggable();
-         $("#drop").droppable();
+         $("#drop").droppable({
+           drop: function(event, ui){
+             $(this)
+             .addClass("ui-state-highlight")
+             .find("p").html("ドロップされましたよ");
+           }
+
+         });
         </script>
     </body>
 </html>
