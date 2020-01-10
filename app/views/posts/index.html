@@ -1,35 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<html>
-    <head>
-      <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
-        <style>
-           #drug{
-             width: 100px;
-             height: 100px;
-             background-color: aqua;
-             margin: 20px;
-           }
-           #drop{
-             width: 400px;
-             height: 200px;
-             background-color: red;
-           }
-        </style>
-    </head>
-    <body>
-      <ul id="sortable">
-        <li>toyota</li>
-        <li>honda</li>
-        <li>mazda</li>
-        <li>suzuki</li>
-        <li>subaru</li>
-      </ul>
-        <script src="jquery-3.4.1.min.js"></script>
-        <script src="jquery-ui/jquery-ui.js"></script>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <script type="text/javascript">
-          $("#sortable").sortable();
-        </script>
-    </body>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-name="Rob">
+        Email Rob
+      </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-name="Kisten">
+        Email Kisten
+      </button>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-name="Tommy">
+        Email Tommy
+      </button>
+  
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">メールを送る</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ここからメールを送りましょう
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) 
+          var recipient = button.data('name') 
+          var modal = $(this)
+          modal.find('.modal-title').text('新しいメッセージを' + recipient + '送る')
+         modal.find('.modal-body').text(recipient + 'に送るメッセージを入力してください')
+        })
+      </script>
+  </body>
 </html>
